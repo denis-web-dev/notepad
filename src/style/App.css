@@ -1,0 +1,63 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.notebook-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1200px;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+}
+
+.notebook-header {
+  padding: 30px;
+  border-bottom: 2px solid #f0f0f0;
+  text-align: center;
+}
+
+.notebook-header h1 {
+  color: #333;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.notebook-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: #888;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.empty-state .icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .notebook-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .notebook-header h1 {
+    font-size: 2rem;
+  }
+}

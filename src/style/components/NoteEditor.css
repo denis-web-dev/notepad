@@ -1,0 +1,156 @@
+.note-editor {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+}
+
+.editor-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #f0f0f0;
+}
+
+.editor-header h2 {
+	color: #333;
+	font-size: 1.8rem;
+	margin: 0;
+}
+
+.editor-actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.note-date {
+	color: #666;
+	font-size: 14px;
+}
+
+.save-btn {
+	padding: 10px 20px;
+	background: #252525;
+	color: #fff;
+	border: 1px solid #252525;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.save-btn:hover:not(:disabled) {
+	background: #fff;
+	color: #252525;
+	border: 1px solid #e0e0e0;
+}
+
+.save-btn:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+.save-btn.saving {
+	background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+}
+
+.editor-info {
+	margin-bottom: 15px;
+}
+
+.word-count {
+	color: #666;
+	font-size: 14px;
+	background: #f8f9fa;
+	padding: 8px 12px;
+	border-radius: 6px;
+	display: inline-block;
+}
+
+.editor-textarea {
+	flex: 1;
+	padding: 20px;
+	font-size: 16px;
+	line-height: 1.6;
+	border: 2px solid #e0e0e0;
+	border-radius: 10px;
+	resize: none;
+	font-family: inherit;
+	transition: border-color 0.2s;
+}
+
+.editor-textarea:focus {
+	outline: none;
+	border-color: #e0e0e0;
+}
+
+.shortcuts {
+	display: flex;
+	gap: 15px;
+	color: #666;
+	font-size: 14px;
+	flex-wrap: wrap;
+}
+
+.shortcuts span {
+	background: #f0f0f0;
+	padding: 4px 8px;
+	border-radius: 4px;
+}
+.title-container {
+	flex: 1;
+	margin-right: 20px;
+}
+
+.note-title-input {
+	width: 100%;
+	font-size: 1.8rem;
+	font-weight: bold;
+	border: none;
+	background: transparent;
+	color: #333;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	border-bottom: 2px solid transparent;
+	transition: border-color 0.2s;
+}
+
+.note-title-input:focus {
+	outline: none;
+	border-bottom-color: #667eea;
+}
+
+.note-title-input::placeholder {
+	color: #aaa;
+	font-weight: normal;
+}
+
+.editor-header {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #f0f0f0;
+}
+
+.editor-header-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.note-date {
+	font-size: 12px;
+	color: #666;
+	display: flex;
+	gap: 10px;
+}
+
+.editor-header h2 {
+	display: none;
+}

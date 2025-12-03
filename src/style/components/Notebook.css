@@ -1,0 +1,169 @@
+/* src/style/components/Notebook.css */
+
+.notebook {
+	display: flex;
+	height: 100vh;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+	padding: 20px;
+}
+
+.notebook-container {
+	display: flex;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	background: white;
+	border-radius: 20px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+.notebook-sidebar {
+	width: 350px;
+	background: #f8fafc;
+	border-right: 1px solid #e2e8f0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	max-height: 100vh;
+}
+
+.sidebar-header {
+	padding: 24px;
+	border-bottom: 1px solid #e2e8f0;
+	background: white;
+	flex-shrink: 0
+}
+
+.app-title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #1e293b;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.app-svg {
+	width: 25px;
+	height: 25px;
+}
+
+.add-note-btn {
+	width: 100%;
+	padding: 14px;
+	background: #252525;
+	color: #fff;
+	border: 2px solid #252525;
+	border-radius: 12px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	transition: ease-in-out 0.2s;
+	margin-bottom: 20px;
+}
+
+.add-note-btn:hover {
+	background: #fff;
+	color: #252525;
+	border: 2px solid #e0e0e0;
+}
+
+.add-note-btn::before {
+	content: '+';
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.notes-counter {
+	padding: 16px 24px;
+	font-size: 13px;
+	color: #64748b;
+	border-top: 1px solid #e2e8f0;
+	font-weight: 500;
+	flex-shrink: 0;
+}
+
+.notebook-editor {
+	flex: 1;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.empty-editor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: #64748b;
+	text-align: center;
+	padding: 40px;
+}
+
+.empty-editor .icon {
+	font-size: 80px;
+	margin-bottom: 24px;
+	opacity: 0.5;
+}
+
+.empty-editor h3 {
+	font-size: 24px;
+	font-weight: 600;
+	color: #334155;
+	margin-bottom: 12px;
+}
+
+.empty-editor p {
+	font-size: 16px;
+	color: #94a3b8;
+	max-width: 400px;
+	line-height: 1.6;
+}
+/* Добавь эти стили в Notebook.css */
+
+.app-subtitle {
+	color: #64748b;
+	font-size: 14px;
+	margin-bottom: 20px;
+	line-height: 1.5;
+}
+
+.search-container {
+	margin-top: 15px;
+}
+
+.counter-text {
+	display: block;
+	text-align: center;
+}
+
+.empty-icon {
+	font-size: 80px;
+	margin-bottom: 24px;
+	opacity: 0.5;
+}
+
+.empty-title {
+	font-size: 24px;
+	font-weight: 600;
+	color: #334155;
+	margin-bottom: 12px;
+}
+
+.empty-text {
+	font-size: 16px;
+	color: #94a3b8;
+	max-width: 400px;
+	line-height: 1.6;
+}
+.empty-svg {
+	width: 100px;
+	height: 100px;
+}
