@@ -12,13 +12,3 @@
 ✅ Автосохранение в localStorage
 ✅ Адаптивный дизайн
 
-Структура проекта
-
-src/
-├── components/ # React компоненты
-│ ├── Notebook.jsx # Главный компонент
-│ ├── NoteList.jsx # Список заметок
-│ ├── NoteEditor.jsx # Редактор
-│ └── SearchBar.jsx # Поиск
-├── App.jsx # Корневой компонент
-└── main.jsx # Точка входа
