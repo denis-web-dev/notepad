@@ -81,7 +81,7 @@ const NoteEditor = ({ note, onUpdate, onUpdateTitle }) => {
 
 				<div className="editor-actions">
 					<button className={`save-btn ${isSaving ? 'saving' : ''}`} onClick={handleSave} disabled={isSaving}>
-						{isSaving ? 'Сохранение...' : 'Сохранить (Ctrl+S)'}
+						{isSaving ? 'Сохранение...' : 'Сохранить'}
 					</button>
 				</div>
 			</div>
@@ -103,13 +103,6 @@ const NoteEditor = ({ note, onUpdate, onUpdateTitle }) => {
 			/>
 
 			<div className="editor-footer">
-				<div className="shortcuts">
-					<strong>Горячие клавиши:</strong>
-					<span>Ctrl+S — сохранить</span>
-					<span>Enter (моб.) — сохранить</span>
-					<span>Shift+Enter — новая строка</span>
-				</div>
-
 				{isMobile && (
 					<div className="mobile-save-container">
 						<button className="mobile-save-btn" onClick={handleSave} disabled={isSaving}>
