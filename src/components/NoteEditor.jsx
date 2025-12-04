@@ -5,11 +5,20 @@ const NoteEditor = ({ note, onUpdate, onUpdateTitle }) => {
 	const [title, setTitle] = useState(note.title);
 	const [content, setContent] = useState(note.content);
 	const [isSaving, setIsSaving] = useState(false);
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
 	useEffect(() => {
 		setTitle(note.title);
 		setContent(note.content);
 	}, [note]);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 768);
+		};
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	const handleTitleChange = (e) => {
 		const newTitle = e.target.value;
@@ -22,22 +31,31 @@ const NoteEditor = ({ note, onUpdate, onUpdateTitle }) => {
 	const handleContentChange = (e) => {
 		const newContent = e.target.value;
 		setContent(newContent);
-		// Автосохранение контента при изменении
+
 		onUpdate(newContent);
 	};
 
 	const handleSave = () => {
 		setIsSaving(true);
-		// Убедимся, что всё сохранено
+
 		if (onUpdateTitle) {
 			onUpdateTitle(title);
 		}
 		onUpdate(content);
+
+		if (isMobile) {
+			document.activeElement?.blur();
+		}
+
 		setTimeout(() => setIsSaving(false), 300);
 	};
 
 	const handleKeyDown = (e) => {
 		if (e.ctrlKey && e.key === 's') {
+			e.preventDefault();
+			handleSave();
+		}
+		if (isMobile && e.key === 'Enter' && !e.shiftKey) {
 			e.preventDefault();
 			handleSave();
 		}
@@ -57,13 +75,13 @@ const NoteEditor = ({ note, onUpdate, onUpdateTitle }) => {
 					/>
 					<div className="note-date">
 						<span>Создано: {note.createdAt}</span>
-						<span> | Обновлено: {note.updatedAt}</span>
+						{note.updatedAt !== note.createdAt && <span> | Обновлено: {note.updatedAt}</span>}
 					</div>
 				</div>
 
 				<div className="editor-actions">
 					<button className={`save-btn ${isSaving ? 'saving' : ''}`} onClick={handleSave} disabled={isSaving}>
-						{isSaving ? 'Сохранение...' : 'Сохранить'}
+						{isSaving ? 'Сохранение...' : 'Сохранить (Ctrl+S)'}
 					</button>
 				</div>
 			</div>
@@ -81,8 +99,25 @@ const NoteEditor = ({ note, onUpdate, onUpdateTitle }) => {
 				onChange={handleContentChange}
 				onKeyDown={handleKeyDown}
 				placeholder="Начните писать здесь..."
-				autoFocus
+				autoFocus={!isMobile}
 			/>
+
+			<div className="editor-footer">
+				<div className="shortcuts">
+					<strong>Горячие клавиши:</strong>
+					<span>Ctrl+S — сохранить</span>
+					<span>Enter (моб.) — сохранить</span>
+					<span>Shift+Enter — новая строка</span>
+				</div>
+
+				{isMobile && (
+					<div className="mobile-save-container">
+						<button className="mobile-save-btn" onClick={handleSave} disabled={isSaving}>
+							{isSaving ? 'Сохранение...' : 'Сохранить'}
+						</button>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };
