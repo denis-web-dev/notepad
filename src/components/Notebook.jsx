@@ -140,7 +140,7 @@ const Notebook = () => {
 			<div className="notebook-container">
 				<div className="notebook-sidebar">
 					<div className="sidebar-header">
-						<div className="app-title">Умный Блокнот</div>
+						<div className="app-title">Блокнот</div>
 
 						<button className="add-note-btn" onClick={addNote}>
 							Новая запись
