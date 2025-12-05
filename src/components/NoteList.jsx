@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { FaPencilAlt } from 'react-icons/fa';
 import '../style/components/NoteList.css';
 
-const NoteList = ({ notes, currentNoteIndex, onNoteSelect, onDeleteNote }) => {
+const NoteList = ({ notes, currentNoteIndex, onNoteSelect, onDeleteNote, onEditNote }) => {
 	const [dragIndex, setDragIndex] = useState(null);
 
 	const handleDragStart = (index) => {
@@ -43,16 +44,28 @@ const NoteList = ({ notes, currentNoteIndex, onNoteSelect, onDeleteNote }) => {
 								<span className="note-icon">📄</span>
 								{note.title}
 							</div>
-							<button
-								className="delete-btn"
-								onClick={(e) => {
-									e.stopPropagation();
-									onDeleteNote(note.id);
-								}}
-								title="Удалить"
-							>
-								×
-							</button>
+							<div className="note-actions">
+								<button
+									className="edit-btn-list"
+									onClick={(e) => {
+										e.stopPropagation();
+										onEditNote(index);
+									}}
+									title="Редактировать"
+								>
+									<FaPencilAlt />
+								</button>
+								<button
+									className="delete-btn"
+									onClick={(e) => {
+										e.stopPropagation();
+										onDeleteNote(note.id);
+									}}
+									title="Удалить"
+								>
+									×
+								</button>
+							</div>
 						</div>
 
 						<div className="note-preview">

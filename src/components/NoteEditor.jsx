@@ -2,18 +2,19 @@ import { useState, useEffect } from 'react';
 import { FaPencilAlt } from 'react-icons/fa';
 import '../style/components/NoteEditor.css';
 
-const NoteEditor = ({ note, onUpdate, onUpdateTitle }) => {
+const NoteEditor = ({ note, onUpdate, onUpdateTitle, forceEdit, onSaveComplete }) => {
 	const [title, setTitle] = useState(note.title);
 	const [content, setContent] = useState(note.content);
 	const [isSaving, setIsSaving] = useState(false);
-	const [isEditing, setIsEditing] = useState(note.content === ''); // Для новой заметки — редактирование
+	const [isEditing, setIsEditing] = useState(false);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
 	useEffect(() => {
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setTitle(note.title);
 		setContent(note.content);
-		setIsEditing(note.content === '');
-	}, [note]);
+		setIsEditing(forceEdit || note.content === '');
+	}, [note, forceEdit]);
 
 	useEffect(() => {
 		const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -33,9 +34,12 @@ const NoteEditor = ({ note, onUpdate, onUpdateTitle }) => {
 		setIsSaving(true);
 		onUpdateTitle(note.id, title);
 		onUpdate(note.id, content);
-		setIsEditing(false); // Перейти в просмотр
+		setIsEditing(false);
 		if (isMobile) document.activeElement?.blur();
-		setTimeout(() => setIsSaving(false), 300);
+		setTimeout(() => {
+			setIsSaving(false);
+			onSaveComplete();
+		}, 300);
 	};
 
 	const handleEdit = () => {

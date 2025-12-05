@@ -15,6 +15,7 @@ const Notebook = () => {
 	const [filteredNotes, setFilteredNotes] = useState(notes);
 	const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+	const [forceEdit, setForceEdit] = useState(false);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -63,6 +64,7 @@ const Notebook = () => {
 		};
 		setNotes([newNote, ...notes]);
 		setCurrentNoteIndex(0);
+		setForceEdit(true);
 		setIsSidebarVisible(false); // Скрыть sidebar на мобильных после добавления
 
 		// Автофокус только на десктопе
@@ -107,10 +109,24 @@ const Notebook = () => {
 		}
 	};
 
-	// Выбор заметки
+	// Выбор заметки для просмотра
 	const selectNote = (index) => {
 		setCurrentNoteIndex(index);
+		setForceEdit(false);
 		setIsSidebarVisible(false); // Скрыть sidebar на мобильных после выбора
+	};
+
+	// Выбор заметки для редактирования
+	const editNote = (index) => {
+		setCurrentNoteIndex(index);
+		setForceEdit(true);
+		setIsSidebarVisible(false);
+	};
+
+	// После сохранения
+	const handleSaveComplete = () => {
+		setCurrentNoteIndex(null);
+		setForceEdit(false);
 	};
 
 	return (
@@ -134,6 +150,7 @@ const Notebook = () => {
 						currentNoteIndex={currentNoteIndex}
 						onNoteSelect={selectNote}
 						onDeleteNote={deleteNote}
+						onEditNote={editNote}
 					/>
 					<div className="notes-counter">
 						<span className="counter-text">Всего записей: {notes.length}</span>
@@ -151,6 +168,8 @@ const Notebook = () => {
 							note={notes[currentNoteIndex]}
 							onUpdate={updateNote}
 							onUpdateTitle={updateNoteTitle}
+							forceEdit={forceEdit}
+							onSaveComplete={handleSaveComplete}
 						/>
 					) : (
 						<div className="empty-editor">
