@@ -1,259 +1,265 @@
 .note-editor {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
 }
 
 .editor-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #f0f0f0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #f0f0f0;
 }
 
 .editor-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
 }
 
 .note-date {
-  color: #666;
-  font-size: 14px;
+	color: #666;
+	font-size: 14px;
 }
 
 .save-btn {
-  padding: 10px 20px;
-  background: #252525;
-  color: #fff;
-  border: 1px solid #252525;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
+	padding: 10px 20px;
+	background: #252525;
+	color: #fff;
+	border: 1px solid #252525;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.2s;
 }
 
 .save-btn:hover:not(:disabled) {
-  background: #fff;
-  color: #252525;
-  border: 1px solid #e0e0e0;
+	background: #fff;
+	color: #252525;
+	border: 1px solid #e0e0e0;
 }
 
 .save-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+	opacity: 0.7;
+	cursor: not-allowed;
 }
 
 .save-btn.saving {
-  background: #252525;
-  color: #fff;
-  border: 1px solid #252525;
+	background: #252525;
+	color: #fff;
+	border: 1px solid #252525;
 }
 
 .editor-info {
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .word-count {
-  color: #666;
-  font-size: 14px;
-  background: #f8f9fa;
-  padding: 8px 12px;
-  border-radius: 6px;
-  display: inline-block;
+	color: #666;
+	font-size: 14px;
+	background: #f8f9fa;
+	padding: 8px 12px;
+	border-radius: 6px;
+	display: inline-block;
 }
 
 .editor-textarea {
-  flex: 1;
-  padding: 20px;
-  font-size: 16px;
-  line-height: 1.6;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  resize: none;
-  font-family: inherit;
-  transition: border-color 0.2s;
+	flex: 1;
+	padding: 20px;
+	font-size: 16px;
+	line-height: 1.6;
+	border: 2px solid #e0e0e0;
+	border-radius: 10px;
+	resize: none;
+	font-family: inherit;
+	transition: border-color 0.2s;
 }
 
 .editor-textarea:focus {
-  outline: none;
-  border-color: #e0e0e0;
+	outline: none;
+	border-color: #e0e0e0;
 }
 
 .title-container {
-  flex: 1;
-  margin-right: 20px;
+	flex: 1;
+	margin-right: 20px;
 }
 
 .note-title-input {
-  width: 100%;
-  font-size: 1.8rem;
-  font-weight: bold;
-  border: none;
-  background: transparent;
-  color: #333;
-  padding: 10px 0;
-  margin-bottom: 10px;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s;
+	width: 100%;
+	font-size: 1.8rem;
+	font-weight: bold;
+	border: none;
+	background: transparent;
+	color: #333;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	border-bottom: 2px solid transparent;
+	transition: border-color 0.2s;
 }
 
 .note-title-input:focus {
-  outline: none;
-  border-bottom-color: #667eea;
+	outline: none;
+	border-bottom-color: #667eea;
 }
 
 .note-title-input::placeholder {
-  color: #aaa;
-  font-weight: normal;
+	color: #aaa;
+	font-weight: normal;
 }
 
 .editor-header {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #f0f0f0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #f0f0f0;
 }
 
 .editor-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 }
 
 .note-date {
-  font-size: 12px;
-  color: #666;
-  display: flex;
-  gap: 10px;
+	font-size: 12px;
+	color: #666;
+	display: flex;
+	gap: 10px;
 }
 
 @media (max-width: 768px) {
-  .note-editor {
-    padding: 15px;
-    padding-bottom: 80px;
-  }
+	.note-editor {
+		padding: 15px;
+		padding-bottom: 80px;
+	}
 
-  .editor-header {
-    flex-direction: column;
-    gap: 15px;
-  }
+	.editor-header {
+		flex-direction: column;
+		gap: 15px;
+	}
 
-  .editor-actions {
-    width: 100%;
-  }
+	.editor-actions {
+		width: 100%;
+	}
 
-  .save-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-  }
+	.save-btn {
+		width: 100%;
+		padding: 12px;
+		font-size: 16px;
+	}
 
-  .note-title-input {
-    font-size: 1.5rem;
-  }
+	.note-title-input {
+		font-size: 1.5rem;
+	}
 
-  .editor-textarea {
-    font-size: 16px;
-    min-height: 300px;
-    padding: 15px;
-  }
+	.editor-textarea {
+		font-size: 16px;
+		min-height: 300px;
+		padding: 15px;
+	}
 
-  .mobile-save-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 15px;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
+	.mobile-save-container {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: white;
+		padding: 15px;
+		box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+		z-index: 1000;
+	}
 
-  .mobile-save-btn {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
+	.mobile-save-btn {
+		width: 100%;
+		padding: 14px;
+		background: #252525;
+		color: #fff;
+		border: 2px solid #252525;
+		border-radius: 10px;
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
 
-  .mobile-save-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+	}
+	.mobile-save-btn:hover {
+		background: #fff;
+		color: #252525;
+		border: 2px solid #252525;
+	}
 
-  .editor-actions .save-btn {
-    display: none;
-  }
+	.mobile-save-btn:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
+	.editor-actions .save-btn {
+		display: none;
+	}
 }
 
 @media (min-width: 769px) {
-  .mobile-save-container {
-    display: none;
-  }
+	.mobile-save-container {
+		display: none;
+	}
 }
 
 @media (max-width: 768px) {
-  textarea,
-  input {
-    font-size: 16px !important;
-  }
+	textarea,
+	input {
+		font-size: 16px !important;
+	}
 
-  .editor-textarea:focus {
-    border-color: #667eea;
-    outline: none;
-  }
+	.editor-textarea:focus {
+		border-color: #667eea;
+		outline: none;
+	}
 }
 
 .note-title-view {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 10px;
 }
 
 .note-content-view {
-  flex: 1;
-  padding: 20px;
-  font-size: 16px;
-  line-height: 1.6;
-  background: #f8f9fa;
-  border-radius: 10px;
-  overflow-y: auto;
-  white-space: pre-wrap;
+	flex: 1;
+	padding: 20px;
+	font-size: 16px;
+	line-height: 1.6;
+	background: #f8f9fa;
+	border-radius: 10px;
+	overflow-y: auto;
+	white-space: pre-wrap;
 }
 
 .edit-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: #667eea;
-  transition: color 0.2s;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+	color: #667eea;
+	transition: color 0.2s;
 }
 
 .edit-btn:hover {
-  color: #764ba2;
+	color: #764ba2;
 }
 
 @media (max-width: 768px) {
-  .note-content-view {
-    padding: 15px;
-    min-height: 300px;
-  }
+	.note-content-view {
+		padding: 15px;
+		min-height: 300px;
+	}
 }

@@ -184,8 +184,13 @@ const Notebook = () => {
 
 				<div className="notebook-editor">
 					{isMobile && (
-						<button className="burger-btn" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>
-							☰
+						<button
+							className={`burger-btn ${isSidebarVisible ? 'active' : ''}`}
+							onClick={() => setIsSidebarVisible(!isSidebarVisible)}
+						>
+							<span></span>
+							<span></span>
+							<span></span>
 						</button>
 					)}
 					{currentNoteIndex !== null ? (
