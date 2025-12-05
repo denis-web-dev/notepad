@@ -119,7 +119,7 @@ const Notebook = () => {
 				<div className={`notebook-sidebar ${isSidebarVisible ? 'visible' : ''}`}>
 					<div className="sidebar-header">
 						<h1 className="app-title">
-							<span className="app-svg"></span> Блокнот
+							<span className="app-svg">📓</span> Блокнот
 						</h1>
 						<p className="app-subtitle">Ваши мысли и идеи в безопасности здесь</p>
 						<button className="add-note-btn" onClick={addNote}>
@@ -155,9 +155,16 @@ const Notebook = () => {
 					) : (
 						<div className="empty-editor">
 							<div className="empty-svg">
-								{/* SVG icon from original */}
-								<svg viewBox="0 0 100 100">
-									{/* ... (paste the full SVG path from your original code) ... */}
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="100"
+									height="100"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2"
+								>
+									<path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm3 2h8v2H8V7zm0 4h8v2H8v-2zm0 4h5v2H8v-2z" />
 								</svg>
 							</div>
 							<h2 className="empty-title">Выберите запись или создайте новую</h2>

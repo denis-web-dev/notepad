@@ -1,5 +1,3 @@
-/* src/style/components/Notebook.css */
-
 .notebook {
 	display: flex;
 	height: 100vh;
@@ -126,7 +124,6 @@
 	max-width: 400px;
 	line-height: 1.6;
 }
-/* Добавь эти стили в Notebook.css */
 
 .app-subtitle {
 	color: #64748b;
@@ -200,5 +197,12 @@
 	.notebook-editor {
 		flex: 1;
 		padding: 10px;
+	}
+	body,
+	html {
+		overflow-x: hidden;
+	}
+	.notebook {
+		padding: 0;
 	}
 }
