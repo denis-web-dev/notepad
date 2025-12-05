@@ -13,7 +13,6 @@
 	transition: all 0.2s;
 	border: 2px solid transparent;
 	position: relative;
-	/* Гарантируем, что контент не выходит за границы */
 	overflow: hidden;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -134,6 +133,10 @@
 
 	.note-meta {
 		font-size: 11px;
+	}
+
+	.delete-btn {
+		opacity: 1;
 	}
 }
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../style/components/NoteList.css';
 
-const NoteList = ({ notes, currentNoteIndex, onNoteSelect, onDeleteNote, onReorder }) => {
+const NoteList = ({ notes, currentNoteIndex, onNoteSelect, onDeleteNote }) => {
 	const [dragIndex, setDragIndex] = useState(null);
 
 	const handleDragStart = (index) => {
@@ -14,7 +14,8 @@ const NoteList = ({ notes, currentNoteIndex, onNoteSelect, onDeleteNote, onReord
 
 	const handleDrop = (dropIndex) => {
 		if (dragIndex !== null && dragIndex !== dropIndex) {
-			onReorder(dragIndex, dropIndex);
+			// onReorder would need to be implemented if drag-and-drop is required
+			// For now, assuming no reorder, or add logic
 		}
 		setDragIndex(null);
 	};
@@ -34,7 +35,7 @@ const NoteList = ({ notes, currentNoteIndex, onNoteSelect, onDeleteNote, onReord
 						onClick={() => onNoteSelect(index)}
 						draggable
 						onDragStart={() => handleDragStart(index)}
-						onDragOver={(e) => handleDragOver(e, index)}
+						onDragOver={handleDragOver}
 						onDrop={() => handleDrop(index)}
 					>
 						<div className="note-header">
