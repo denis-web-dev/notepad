@@ -127,6 +127,9 @@ const Notebook = () => {
 	const handleSaveComplete = () => {
 		setCurrentNoteIndex(null);
 		setForceEdit(false);
+		if (isMobile) {
+			setIsSidebarVisible(true); // Показать список заметок на мобильных после сохранения
+		}
 	};
 
 	// Перестановка заметок
@@ -156,7 +159,7 @@ const Notebook = () => {
 				<div className={`notebook-sidebar ${isSidebarVisible ? 'visible' : ''}`}>
 					<div className="sidebar-header">
 						<h1 className="app-title">
-							<span className="app-svg">Блокнот</span>
+							<span className="app-svg"></span> Блокнот
 						</h1>
 						<p className="app-subtitle">Ваши мысли и идеи в безопасности здесь</p>
 						<button className="add-note-btn" onClick={addNote}>
